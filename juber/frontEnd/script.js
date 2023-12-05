@@ -38,6 +38,8 @@ const checkOut = async(e) => {
       razor.open();
     }catch(err){
       console.log(err)
+      alert("please run ur server with node js to intergate the payment");
+      return;
     }
 }
 
