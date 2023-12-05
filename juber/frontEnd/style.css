@@ -60,6 +60,10 @@ ul li a{
     font-weight: bold;
 }
 
+ul li a:hover{
+  color: #fff;
+}
+
 
 .login-btn{
     border: none;
