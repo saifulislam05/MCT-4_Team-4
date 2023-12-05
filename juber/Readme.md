@@ -1,46 +1,26 @@
-# Payment Intregation
+ [Hosted Link] : (https://juber13.github.io/payment_intregation/frontEnd/index.html)
 
-## [Hosted Link](https://juber13.github.io/payment_intregation/frontEnd/index.html)
+# Razorpay Payment Integration
 
-### Table of Contents
+* donation site for childern for there education and livelyhood
 
+# Feature 
+* multiple Way to payment online like phone pe paytm an etc
+* used razorpay api payment integration 
+* See real time online payment 
 
-    - [Table of Contents](#table-of-contents)
-    - [Features](#features)
-    - [Tools used to build the project](#tools-used-to-build-the-project)
-    - [Building / package.json scripts](#building--packagejson-scripts)
-    - [Contributors](#contributors)
-    - [Challenges Faced](#challenges-faced)
-
-
-
-
-### Tools used to build the project
-
-| Tool           | Purpose                                                            | Link                                        |
-| HTML           | Markup language                                                    | —                                           |
-| CSS            | Scripting language for styling webpages                            | —                                           |
-| JavaScript     | Logic for the webpage in some elements                             | —                                           |
-| FontAwesome    | Adds custom icons                                                  | [Link](https://fontawesome.com/)            |
+# Tech Stack Used
+* Html
+* Css
+* Javascript
+* Node js
+* Api call
 
 
-### Building / package.json scripts
+# How to run project to see the online payment
 
-After cloning the files into your local machine, run
-
-`npm install`
-
-to install the dev dependencies
-
-`npm run buildcss`
-
-which is defined in `package.json` to run
+* npm install
+* run your serve with localhost 4000
 
 
 
-which is defined in the `package,json` to run
-
-
-Use Node js for server
-
-To see the payment interegation just run ur server with local host 4000 
