@@ -26,6 +26,8 @@ dist-ssr
 *.sw?
 
 # misc
+# .config
+config
 .DS_Store
 .env.local
 .env.development.local
