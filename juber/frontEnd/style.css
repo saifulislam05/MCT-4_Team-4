@@ -1,0 +1,180 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.3rem;
+}
+
+main {
+  width: 100%;
+}
+
+.header {
+  background: #e54d0b;
+  height: 60px;
+}
+
+.logo{
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.justify-space {
+  justify-content: space-around;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+ul li a{
+    color: #000;
+    font-weight: bold;
+}
+
+
+.login-btn{
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    background: #fff;
+}
+
+.hero{
+    background: transparent;
+    width: 100%;
+    height: calc(100vh - 60px);
+}
+
+.hero img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+}
+
+.cards{
+  width: 100%;
+  padding-top: 2rem;
+  text-align: center;
+  background: #081635;
+  padding-bottom: 4rem;
+}
+
+.heading h4{
+  color: tomato;
+  font-size: 2rem;
+}
+
+.card{
+  width: 200px;
+  height: auto;
+  margin-top: 50px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding-bottom: 1rem;
+  padding: 1rem;
+}
+
+.card h4{
+  font-size: 2rem;
+  color: #b1bccd;
+}
+
+.card .description{
+  font-size: 1rem;
+  color: #576a84;
+  font-weight: bold;
+}
+
+.card img{
+  width: 100%;
+  height: 180px;
+}
+
+.pay-now-btn{
+  width: 90%;
+  margin: 0 auto;
+  padding: 0.2rem 1.5rem;
+  font-weight: bold;
+  font-size: 6px;
+  background-color: #cadef9;
+  gap: 0;
+}
+
+.pay-now-btn h6{
+  font-size: 16px;
+}
+
+i{
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.pay-now-btn img{
+  width: 20px;
+  height: 20px;
+}
+
+.footer{
+  width: 100%;
+  padding-top: 2rem;
+  background: #14253f;
+}
+
+.footer-container{
+  width: 90%;
+  margin: 0 auto;
+}
+.email{
+  color: #b4c1d1;
+}
+.footer .footer-content h3{
+  color: #deebfb;
+  font-size: 1.2rem;
+  margin-left: 45px;
+}
+
+hr{
+  width: 130px;
+  height: 2px;
+  background-color: #e54d0b;
+  border: none;
+}
+
+.footer .footer-content ul{
+  color: #52647f;
+}
+
+.thunder-img{
+  width: 100px;
+  mix-blend-mode:screen ;
+}
