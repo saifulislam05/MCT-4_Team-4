@@ -53,6 +53,6 @@ which is defined in `package.json` to run
 which is defined in the `package,json` to run
 
 
-<!-- use node js for server -->
+Use Node js for server
 
 To see the payment interegation just run ur server with local host 4000 
