@@ -30,10 +30,8 @@ The screenshots take a lot of space. Click on the links to navigate easily
 ### Tools used to build the project
 
 | Tool           | Purpose                                                            | Link                                        |
-| -------------- | ------------------------------------------------------------------ | ------------------------------------------- |
 | HTML           | Markup language                                                    | —                                           |
 | CSS            | Scripting language for styling webpages                            | —                                           |
-           |           |
 | JavaScript     | Logic for the webpage in some elements                             | —                                           |
 | FontAwesome    | Adds custom icons                                                  | [Link](https://fontawesome.com/)            |
 
@@ -55,3 +53,6 @@ which is defined in `package.json` to run
 which is defined in the `package,json` to run
 
 
+<!-- use node js for server -->
+
+To see the payment interegation just run ur server with local host 4000 
