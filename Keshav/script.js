@@ -32,7 +32,7 @@ const TILE_STATUSES = {
           },
         }
   
-          console.log(tile);
+          
         row.push(tile)
       }
       board.push(row)
@@ -50,9 +50,12 @@ const TILE_STATUSES = {
     }
   
     if (tile.status === TILE_STATUSES.MARKED) {
-      tile.status = TILE_STATUSES.HIDDEN
+        tile.status = TILE_STATUSES.HIDDEN
+        tile.element.innerHTML = ''
+
     } else {
-      tile.status = TILE_STATUSES.MARKED
+        tile.status = TILE_STATUSES.MARKED
+        tile.element.innerHTML = ' 🚩'
     }
   }
   
@@ -62,7 +65,8 @@ const TILE_STATUSES = {
     }
   
     if (tile.mine) {
-      tile.status = TILE_STATUSES.MINE
+        tile.status = TILE_STATUSES.MINE
+        tile.element.innerHTML =  '💣'
       return
     }
   
