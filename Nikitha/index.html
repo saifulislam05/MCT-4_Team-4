@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="styleshhet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.css">
+    <title>Resume Builder</title>
+</head>
+<body>
+    <main>
+    <header>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYsRSuT4B5if2holLfpOh9Iy0RmjNSMCK8DaavngicUUfQTAnS" width="40px" height="40px">
+    <button id="downloadButton" class="download-button"><i class="fa fa-download"></i> Download PDF</button>
+    </header>
+    <div class="main-container" id="content">
+  <div class="left-container">
+  <form>
+    <p>Template Type</p>
+    <select id="templateType">
+        <option id="Two-column" value="twoColumn" class="text-input">Two-column</option>
+        <option id="Minimalist" value="minimalist" class="text-input">Minimalist</option>
+    </select>
+    <p>Header Color</p>
+    <input id="colorPickerHeader"type="color" class="colorPicker" id="colorpicker" value="#933434">
+    <p>Header-Text Color</p>
+    <input id="colorPickerHeaderText" type="color"   class="colorPicker" id="colorpicker" value="#FFFFFF">
+    <div class="personal-details">
+    <p>Personal Details</p>
+    <input id="name" class="text-input" type="text" id="name" placeholder="Name"><br>
+    <input id="email" class="text-input" type="email" id="email" placeholder="E-mail ID"><br>
+    <input id="phone" class="text-input" type="phone" id="phone" placeholder="Phone"><br>
+    <input id="city" class="text-input" type="text" id="city" placeholder="City,Country"><br>
+    </div>
+    <div class="professional-details">
+        <p>Professional Details</p>
+        <input id="jobTitleInput" class="text-input" type="text" id="title" placeholder="Wanted job Title"><br>
+        <textarea id="textarea" placeholder="Professional Summary" rows="6" cols="18"></textarea><br>
+        <input id="skills" class="text-input" type="text" id="skills" placeholder="Skills..seperate skills by comma"><br>
+    </div><br>
+    <button id="employementButton" class="employement-button color-green">Add Employement</button><br><br>
+    <div class="employementDetails" id="employementDetails"></div>
+    <button id="projectButton" class="project-button color-green">Add Project</button>
+    <div class="projectDetails" id="projectDetails"></div>
+    <p>Educational Background</p>
+    <button id="educationButton" class="education-button color-green">Add Education</button>
+    <div class="educationDetails" id="educationDetails"></div>
+  </form>
+</div>
+
+ <div class="right-container" id="twoColumnTemplate">
+  <div id="headerRight" class="header-right"></div>
+  <div class="flex-class">
+    <div class="grey">
+    <div class="resume-left">
+    <p style="font-weight:bold;">SKILLS</p>
+    <hr>
+    <div class="skills-class" id="skillsDiv"></div>
+    <p style="font-weight:bold;">CONTACT</p>
+    <hr>
+    <div class="contactClass" id="contactDiv"></div>
+    <p><i class="fa fa-phone icon"></i>  <span class="phone-icon" id="phoneDiv"></span></p>
+    <p><i class="fa fa-envelope icon"></i>  <span class="email-icon" id="emailDiv"></span> </p>
+    <p><i class="fa fa-map-marker icon"></i> <span class="location-icon" id="locationDiv"></span></p>
+   </div>
+    </div>
+  
+    <div class="resume-right">
+    <p style="font-weight:bold;">SUMMARY</p><hr>
+    <div class="summary-class" id="summaryDiv"></div>
+    <p style="font-weight:bold;">PROFESSIONAL EXPERIENCE</p><hr>
+    <div class="professional-class" id="professionalDiv"></div>
+    <p style="font-weight:bold;">PROJECTS</p><hr>
+    <div class="projects-class" id="projectsDiv"></div>
+    <p style="font-weight:bold;">EDUCATION</p><hr>
+    <div class="education-class" id="educationDiv"></div>
+    </div>
+  </div>
+  </div>
+ 
+<div class="minimalist" id="minimalistTemplate" style="display: none;">
+  <div class="rightcontainerMinimalist">
+    <div id="headerRightMinimalist" class="headerRight">
+      <div class="nameFlex">
+      <div class="nameMinimalist" id="nameRightMinimalist"></div>
+      <div class="pMinimalist" id="pMinimalist"></div>
+      </div>
+        <div class="contactClassMinimalist" id="contactDiv">
+        <p><i class="fa fa-phone icon"></i>  <span class="phone-icon" id="phoneMinimalist"></span></p>
+        <p><i class="fa fa-envelope icon"></i>  <span class="email-icon" id="emailDivMinimalist"></span> </p>
+        <p><i class="fa fa-map-marker icon"></i> <span class="location-icon" id="locationDivMinimalist"></span></p>
+       </div>
+    </div>
+    <div class="flexclassMinimalist">
+     <p style=" color:rgb(49, 49, 164); font-weight:bold;">SUMMARY</p><hr>
+      <div class="summary-class" id="summaryDivMinimalist"></div>
+      <p style=" color:rgb(49, 49, 164); font-weight:bold;">SKILLS</p>
+      <hr>
+      <div class="skills-class" id="skillsDivMinimalist"></div>
+      <p style=" color:rgb(49, 49, 164); font-weight:bold;">PROFESSIONAL EXPERIENCE</p><hr>
+      <div class="professional-class" id="professionalDivMinimalist"></div>
+      <p style=" color:rgb(49, 49, 164); font-weight:bold;">PROJECTS</p><hr>
+      <div class="projects-class" id="projectsDivMinimalist"></div>
+      <p style=" color:rgb(49, 49, 164); font-weight:bold;">EDUCATION</p><hr>
+      <div class="education-class" id="educationDivMinimalist"></div>
+    </div>
+    </div>
+    </div>
+  </div>
+  </main> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.1/html2canvas.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
