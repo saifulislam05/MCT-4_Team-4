@@ -1,3 +1,4 @@
+// Function to get the active tab's URL
 async function getActiveTabURL() {
   const tabs = await chrome.tabs.query({
     currentWindow: true,
@@ -7,8 +8,8 @@ async function getActiveTabURL() {
   return tabs[0];
 }
 
+// Function to add a new bookmark to the UI
 const addNewBookmark = (bookmarks, bookmark) => {
-
   const bookmarkTitleElement = document.createElement("div");
   const controlsElement = document.createElement("div");
   const newBookmarkElement = document.createElement("div");
@@ -29,6 +30,7 @@ const addNewBookmark = (bookmarks, bookmark) => {
   bookmarks.appendChild(newBookmarkElement);
 };
 
+// Function to render bookmarks on the UI
 const viewBookmarks = (currentBookmarks = []) => {
   const bookmarksElement = document.getElementById("bookmarks");
   bookmarksElement.innerHTML = "";
@@ -45,6 +47,7 @@ const viewBookmarks = (currentBookmarks = []) => {
   return;
 };
 
+// Event handler for 'Play' button
 const onPlay = async (e) => {
   const bookmarkTime = e.target.parentNode.parentNode.getAttribute("timestamp");
   const activeTab = await getActiveTabURL();
@@ -55,6 +58,7 @@ const onPlay = async (e) => {
   });
 };
 
+// Event handler for 'Delete' button
 const onDelete = async (e) => {
   const activeTab = await getActiveTabURL();
   const bookmarkTime = e.target.parentNode.parentNode.getAttribute("timestamp");
@@ -74,10 +78,11 @@ const onDelete = async (e) => {
   );
 };
 
+// Function to set attributes for the bookmark controls
 const setBookmarkAttributes = (src, eventListener, controlParentElement) => {
   const controlElement = document.createElement("img");
 
-  controlElement.src = "icons/" + src + ".png";
+  controlElement.src = "../icons/" + src + ".png";
   controlElement.title = src;
   controlElement.addEventListener("click", eventListener);
   controlParentElement.appendChild(controlElement);
