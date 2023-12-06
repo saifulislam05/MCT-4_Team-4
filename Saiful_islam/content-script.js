@@ -1,8 +1,6 @@
-let youtubeLeftControls, youtubePlayer;
+let youtubeLeftControls, youtubePlayer; // for accessing the Controls & the Player
 let currentVideo = "";
 let currentVideoBookmarks = [];
-
-console.log("hi");
 
 const fetchBookmarks = () => {
   return new Promise((resolve) => {
@@ -11,8 +9,8 @@ const fetchBookmarks = () => {
         resolve(obj[currentVideo] ? JSON.parse(obj[currentVideo]) : []);
       });
     } else {
+      console.error("Extension context invalidated.");
       resolve([]);
-      console.error("Something went wrong.");
     }
   });
 };
@@ -21,7 +19,7 @@ const addNewBookmarkEventHandler = async () => {
   const currentTime = youtubePlayer.currentTime;
   const newBookmark = {
     time: currentTime,
-    desc: `Bookmark at ${getTime(currentTime)}`,
+    desc: "Bookmark at " + getTime(currentTime),
   };
 
   currentVideoBookmarks = await fetchBookmarks();
@@ -32,11 +30,9 @@ const addNewBookmarkEventHandler = async () => {
     ),
   });
 
-  chrome.runtime.sendMessage({ type: "NEW" });
 };
 
-const newVideoLoaded = async () => {
-  console.log("newVideoLoaded called");
+const checkForPlayer = async () => {
   youtubeLeftControls = document.getElementsByClassName("ytp-left-controls")[0];
   youtubePlayer = document.getElementsByClassName("video-stream")[0];
 
@@ -55,45 +51,42 @@ const newVideoLoaded = async () => {
       youtubeLeftControls.appendChild(bookmarkBtn);
       bookmarkBtn.addEventListener("click", addNewBookmarkEventHandler);
 
-      return true;
+      return true; // Bookmark button added
     } else {
-      return false;
+      return false; // Bookmark button already exists
     }
   }
 
-  return false;
+  return false; // Bookmark button not added
 };
 
 const init = async () => {
-  console.log("init called");
-  return newVideoLoaded();
+  return checkForPlayer();
 };
 
-chrome.runtime.onMessage.addListener(async (obj, sender, sendResponse) => {
-  console.log("Message received:", obj);
+chrome.runtime.onMessage.addListener(async (obj, sender, response) => {
   const { type, value, videoId } = obj;
 
   if (type === "NEW") {
     currentVideo = videoId;
-    const result = await init();
-    sendResponse(result); // Use sendResponse to send a response back to the sender
+    response(await init());
   } else if (type === "PLAY") {
     youtubePlayer.currentTime = value;
   } else if (type === "DELETE") {
-    const bookmarkTime = parseFloat(value);
-    currentVideoBookmarks = currentVideoBookmarks.filter(
-      (b) => b.time !== bookmarkTime
-    );
+
+    currentVideoBookmarks = currentVideoBookmarks.filter((b) => b.time != value);
     chrome.storage.sync.set({
       [currentVideo]: JSON.stringify(currentVideoBookmarks),
     });
-    sendResponse(currentVideoBookmarks); // Use sendResponse to send a response back to the sender
+
+    response(currentVideoBookmarks);
+
   }
 });
 
 const getTime = (t) => {
-  const date = new Date(0);
+  var date = new Date(0);
   date.setSeconds(t);
+
   return date.toISOString().substr(11, 8);
 };
-
