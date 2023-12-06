@@ -89,9 +89,7 @@ chrome.runtime.onMessage.addListener(async (obj, sender, response) => {
     // Set the video player's current time
     youtubePlayer.currentTime = value;
   } else if (type === "DELETE") {
-    // Log current bookmarks and the value to be deleted
-    console.log(currentVideoBookmarks);
-    console.log("value", value);
+
     // Remove the bookmark with the specified time
     currentVideoBookmarks = currentVideoBookmarks.filter(
       (b) => b.time != value
