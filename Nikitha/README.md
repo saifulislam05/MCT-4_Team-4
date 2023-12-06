@@ -27,6 +27,12 @@ Add professional experiences, projects, and educational background with flexible
 * style.css: CSS file for styling the application.
 * script.js: JavaScript file containing the application logic and functionalities.
 
+
+# UI Design
+
+![firstTemplate](s1.png)
+![secondTemplate](s2.png)
+
  # Live Demo
  
  [Live Demo](https://nikhitha5511.github.io/Resume-Project/)
